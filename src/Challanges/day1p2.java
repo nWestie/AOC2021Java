@@ -1,3 +1,4 @@
+package Challanges;
 import java.io.*;
 import java.util.Scanner;
 
