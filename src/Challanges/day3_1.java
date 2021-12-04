@@ -19,14 +19,21 @@ public class day3_1 {
 				if(line[i] == '1') tot[i]++;
 			}
 		}
-		System.out.printf("Lines: %d%nTotals: %s", lines, Arrays.toString(tot));
+		System.out.printf("Lines: %d%nTotals: %s%n", lines, Arrays.toString(tot));
 		lines /=2;
 		int g=0, a=0;
 		for(int i = 0; i<tot.length;i++) {
 			if(tot[i]>lines)
 				g+=(1<<(tot.length-i-1));
 		}
-		System.out.printf("%d",g);
+		
+		a = ~g;
+		int mask = (int)(Math.pow(2,12)-1);
+		a = a&mask;
+		
+		System.out.printf("|%12s|%n",Integer.toBinaryString(g));
+		System.out.printf("|%12s|%n",Integer.toBinaryString(a));
+		System.out.println(g*a);
 	}
 
 }
